@@ -9,6 +9,9 @@
            ! Important - Take note!
 =============================================================
 
+=== Update modif 3.0.13.8  11 May 2025
+    diedit oleh Mursin Doankk / wewe.net
+
 === Server Release 3.0.13.8  19 july 2017
  + Server Query connections now have a combined maximum buffer size. When this limit is exceeded,
    the connection using the most memory is closed. The buffer size is controlled by the command
