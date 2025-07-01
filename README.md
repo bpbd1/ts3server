@@ -16,7 +16,7 @@ cd /home/teamspeak/; su teamspeak
 ```
 Download and extract the last version:
 ```
-wget https://github.com/bpbd/teamspeak3-server_linux_amd64/releasess/download/ts3servre/teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
+wget https://github.com/bpbd1/teamspeak3-server_linux_amd64/releases/download/ts3server/teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
 tar xvfj teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
 cd teamspeak3-server_linux_amd64
 cp * -R /home/teamspeak
