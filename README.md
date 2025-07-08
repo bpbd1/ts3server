@@ -67,53 +67,29 @@ systemctl enable --now teamspeak
 systemctl status teamspeak
 ```
 ```
-cd /etc/init.d
-nano ts3server
+cd /home
+nano tsanticrash.sh
 ```
 ```
-#! /bin/sh
-### BEGIN INIT INFO
-# Provides:          ts3server
-# Required-Start:    $syslog $time $remote_fs
-# Required-Stop:     $syslog $time $remote_fs
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: ts3server script
-# Description:       Teamspeak autostart script linux by Yamiru.com
-#                    as diferent user
-### END INIT INFO
-#
-# Author:	Viktor V.  Yamiru.com
-#
-. /lib/lsb/init-functions
-
-case "$1" in
-  start)
-    su - teamspeak -c "/opt/ts3server/ts3server_startscript.sh start"
-    echo "Starting TS3 Server"
-    ;;
-  stop)
-    su - teamspeak -c "/opt/ts3server/ts3server_startscript.sh stop"
-    echo "Shutting down TS3 Server"
-    ;;
-  *)
-    echo "Usage: /etc/init.d/ts3server {start|stop}"
-    exit 1
-    ;;
+#!/bin/bash
+case $1 in
+teaspeakserver)
+teaspeakserverpid=`ps ax | grep teamspeakserver | grep -v grep | wc -l`
+if [ $teaspeakserverpid -eq 1 ]
+then exit
+else cd /home/teamspeak/
+./ts3server_startscript.sh start
+fi
+;;
 esac
+```
+```
+chmod 777 tsanticrash.sh
+crontab -e
 
-exit 0
+ */1 * * * * /home/tsanticrash.sh teamspeakserver
+
 ```
-```
-sudo chmod 755 /etc/init.d/ts3server
-sudo update-rc.d ts3server defaults
-systemctl reboot
-systectl stop ts3server
-systectl start ts3server
-systemctl daemon-reload
-sudo update-rc.d ts3server defaults
-```
-if not work: change file permission /chmod/ to 777 ts3server_startscript.sh & ts3server_minimal_runscript.sh
 
 if you have in the ouput Active: active (running) your server is ready!
 
