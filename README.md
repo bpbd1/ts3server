@@ -73,9 +73,9 @@ nano tsanticrash.sh
 ```
 #!/bin/bash
 case $1 in
-teaspeakserver)
-teaspeakserverpid=`ps ax | grep teamspeakserver | grep -v grep | wc -l`
-if [ $teaspeakserverpid -eq 1 ]
+teamspeakserver)
+teamspeakserverpid=`ps ax | grep Teampeakserver | grep -v grep | wc -l`
+if [ $teamspeakserverpid -eq 1 ]
 then exit
 else cd /home/teamspeak/
 ./ts3server_startscript.sh start
