@@ -63,6 +63,9 @@ systemctl daemon-reload
 ```
 Reboot the server and check if your TeamSpeak server is running:
 ```
+systemctl start ts3server
+systemctl enable ts3server
+systemctl status ts3server
 systemctl enable --now teamspeak
 systemctl status teamspeak
 ```
