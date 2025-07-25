@@ -105,6 +105,11 @@ iptables -A INPUT -p tcp --sport 30033 -j ACCEPT
 iptables -A INPUT -p tcp --dport 10011 -j ACCEPT
 iptables -A INPUT -p tcp --sport 10011 -j ACCEPT
 ```
-
-
+```
+ufw allow 9987/udp 
+ufw allow 30033/tcp 
+ufw allow 10011/tcp 
+ufw allow 10022/tcp 
+ufw allow 10080/tcp 
+```
 #### Enjoy your server!
